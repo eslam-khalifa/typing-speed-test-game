@@ -7,3 +7,109 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+:root {
+    --bg-primary: #17a2b8;
+    --bg-secondary: #ffffff;
+    --border-bg-primary: #ccc;
+}
+
+body {
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Index Style */
+.wrapper {
+    background-color: var(--bg-secondary);
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.wrapper .content-box {
+    border: 1px solid var(--border-bg-primary);
+    border-radius: 10px;
+    padding: 13px 20px 0;
+}
+
+.wrapper .content-box .typing-text {
+    max-height: 255px;
+    overflow-y: auto;
+}
+
+.wrapper .content-box .typing-text::-webkit-scrollbar {
+    width: 0px;
+}
+
+.wrapper .content-box .typing-text p {
+    font-size: 21px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.wrapper .content-box .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-bg-primary);
+}
+
+.wrapper .content-box .content .result-details {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.wrapper .content-box .content .result-details li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .content-box .content .result-details li:not(:first-child) {
+    padding-left: 5%;
+    border-left: 1px solid var(--border-bg-primary);
+}
+
+.wrapper .content-box .content .result-details li p {
+    font-size: 18px;
+}
+
+.wrapper .content-box .content .result-details li span {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.wrapper .content-box .content .result-details li span:not(:first-child) {
+    font-weight: 500;
+}
+
+.wrapper .content-box .content .result-details li span b {
+    font-weight: 500;
+}
+
+.wrapper .content-box .content button {
+    padding: 8px 0;
+    background-color: var(--bg-primary);
+    border: none;
+    outline: none;
+    width: 15%;
+    color: var(--bg-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+}
+
+.wrapper .content-box .content button:active {
+    transform: scale(0.95);
+}
