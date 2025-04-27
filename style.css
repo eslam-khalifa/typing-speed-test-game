@@ -11,7 +11,13 @@
 :root {
     --bg-primary: #17a2b8;
     --bg-secondary: #ffffff;
+    --bg-tertiary: #ffc0cb;
+    --bg-quaternary: #bfffb8;
     --border-bg-primary: #ccc;
+    --text-primary: #56964f;
+    --text-secondary: #cb3439;
+    --text-tertiary: #17a2b8;
+    --text-quaternary: rgb(255, 255, 175);
 }
 
 body {
@@ -28,6 +34,12 @@ body {
     width: 60%;
     padding: 20px;
     border-radius: 10px;
+}
+
+.wrapper .input-field {
+    opacity: 0;
+    position: absolute;
+    z-index: -999;
 }
 
 .wrapper .content-box {
@@ -49,6 +61,47 @@ body {
     font-size: 21px;
     text-align: justify;
     letter-spacing: 1px;
+    word-break: break-all;
+}
+
+.wrapper .content-box .typing-text p span.active {
+    color: var(--text-tertiary);
+    background-color: var(--text-quaternary);
+    position: relative;
+}
+
+.wrapper .content-box .typing-text p span.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-tertiary);
+    animation: blink 1s ease-in-out infinite;
+    -webkit-animation: blink 1s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 100%;
+    }
+}
+
+.wrapper .content-box .typing-text p span.correct {
+    color: var(--text-primary);
+}
+
+.wrapper .content-box .typing-text p span.incorrect {
+    color: var(--text-secondary);
+    background-color: var(--bg-tertiary);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    outline: 1px solid var(--bg-secondary);
 }
 
 .wrapper .content-box .content {
